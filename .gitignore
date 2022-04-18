@@ -3,3 +3,4 @@ json.js
 ./node_modules
 .idea
 index.html
+*.pdf
