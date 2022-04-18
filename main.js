@@ -73,6 +73,7 @@ const map = {
 }
 
 // const json = JSON.parse(process.argv[2])
+const json = require(process.argv[2])
 const output_file = process.argv[3]
 
 var html = `<style>${katexStyle}</style>`
