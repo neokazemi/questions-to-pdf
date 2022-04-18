@@ -1,3 +1,3 @@
 **test:**
 
-`node main.js './test' './output.pdf'`
+`node main.js ./test output.pdf`
