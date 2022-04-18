@@ -2,7 +2,6 @@ const fs = require('fs');
 const pdf = require('html-pdf');
 const path = require('path');
 const katex = require('katex')
-// const json = require('./json')
 const katexStyle = require("./style/katex-css")
 
 function renderKatex (match) {
@@ -73,7 +72,7 @@ const map = {
   4: 'د'
 }
 
-const json = JSON.parse(process.argv[2])
+// const json = JSON.parse(process.argv[2])
 const output_file = process.argv[3]
 
 var html = `<style>${katexStyle}</style>`
@@ -141,6 +140,9 @@ const options = {
 }
 
 pdf.create(html, options).toFile(output_file, function(err, res) {
-  if (err) return console.log(err);
-  console.log(res);
+  if (err) {
+    console.log(JSON.stringify({ status: 500, error: err }))
+  } else {
+    console.log(JSON.stringify({ status: 200, file: output_file }));
+  }
 })
