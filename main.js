@@ -40,7 +40,7 @@ function resizeImage (str) {
 }
 
 function addFonts () {
-  fontPath = fs.readFileSync(path.resolve(__dirname, './style/fonts/IRANSans/fonts/ttf/IRANSansWeb.ttf'));
+  let fontPath = fs.readFileSync(path.resolve(__dirname, './style/fonts/IRANSans/fonts/ttf/IRANSansWeb.ttf'));
   const iranSans = fontPath.toString('base64');
   
   const style = `@font-face {
